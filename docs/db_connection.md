@@ -14,7 +14,9 @@
     Before the last "}" add:
 
     "AllowedHosts": "*",
-    "DefaultConnection": "Host=; Database=; Username=; Password="
+    "ConnectionStrings": {
+        "DefaultConnection": "Host=; Database=; Username=; Password="
+    }
   
 ## 2 Models
 
