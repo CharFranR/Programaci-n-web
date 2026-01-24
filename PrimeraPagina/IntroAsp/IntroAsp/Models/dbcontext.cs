@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using IntroAsp.Models;
 public class ApplicationDbContext : DbContext
 {
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
@@ -6,5 +7,5 @@ public class ApplicationDbContext : DbContext
     {
     }
     public DbSet<Book> Books { get; set; }
-    public DbSet<User> User { get; set; }
+    public DbSet<Author> Authors { get; set; }
 }

@@ -226,3 +226,4 @@ C:\Users\oscar\Documents\Programaci-n-web\PrimeraPagina\IntroAsp\IntroAsp\bin\De
 C:\Users\oscar\Documents\Programaci-n-web\PrimeraPagina\IntroAsp\IntroAsp\bin\Debug\net10.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\oscar\Documents\Programaci-n-web\PrimeraPagina\IntroAsp\IntroAsp\obj\Debug\net10.0\IntroAsp.csproj.AssemblyReference.cache
 C:\Users\oscar\Documents\Programaci-n-web\PrimeraPagina\IntroAsp\IntroAsp\obj\Debug\net10.0\IntroAsp.csproj.Up2Date
+C:\Users\oscar\Documents\Programaci-n-web\PrimeraPagina\IntroAsp\IntroAsp\obj\Debug\net10.0\compressed\5t0sutxz0h-{0}-o0lf2p3gbg-o0lf2p3gbg.gz
