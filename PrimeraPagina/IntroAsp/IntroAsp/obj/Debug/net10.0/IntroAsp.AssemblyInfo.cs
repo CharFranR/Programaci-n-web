@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("IntroAsp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+223f9c7e804311bf185e6c90d00ac5d170de0429")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+63489085a4e637933f3a98719ae0f4b5db8dc8ed")]
 [assembly: System.Reflection.AssemblyProductAttribute("IntroAsp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("IntroAsp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

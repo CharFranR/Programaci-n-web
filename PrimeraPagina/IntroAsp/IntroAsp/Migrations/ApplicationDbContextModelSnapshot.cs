@@ -22,21 +22,18 @@ namespace IntroAsp.Migrations
 
             modelBuilder.Entity("IntroAsp.Models.Author", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("AuthorId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("AuthorId"));
 
-                    b.Property<int>("BookId")
-                        .HasColumnType("integer");
+                    b.Property<string>("AuthorName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
 
-                    b.Property<string>("Name")
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("BookId");
+                    b.HasKey("AuthorId");
 
                     b.ToTable("Authors");
                 });
@@ -49,31 +46,40 @@ namespace IntroAsp.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Author")
-                        .HasColumnType("text");
+                    b.Property<int>("AuthorId")
+                        .HasColumnType("integer");
 
-                    b.Property<string>("Name")
-                        .HasColumnType("text");
+                    b.Property<string>("BookName")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("character varying(150)");
+
+                    b.Property<string>("Editorial")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("character varying(150)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("AuthorId");
 
                     b.ToTable("Books");
                 });
 
-            modelBuilder.Entity("IntroAsp.Models.Author", b =>
+            modelBuilder.Entity("IntroAsp.Models.Book", b =>
                 {
-                    b.HasOne("IntroAsp.Models.Book", "Book")
-                        .WithMany("Authors")
-                        .HasForeignKey("BookId")
+                    b.HasOne("IntroAsp.Models.Author", "Author")
+                        .WithMany("Books")
+                        .HasForeignKey("AuthorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Book");
+                    b.Navigation("Author");
                 });
 
-            modelBuilder.Entity("IntroAsp.Models.Book", b =>
+            modelBuilder.Entity("IntroAsp.Models.Author", b =>
                 {
-                    b.Navigation("Authors");
+                    b.Navigation("Books");
                 });
 #pragma warning restore 612, 618
         }

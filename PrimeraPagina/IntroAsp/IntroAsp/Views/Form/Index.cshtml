@@ -1,40 +1,83 @@
-﻿@page
+﻿@model IntroAsp.ViewModels.FormViewModel
 
-<head>
-    <title>Book CRUD</title>
-    <link rel="stylesheet" href="~/css/StyleSheet.css"/>
+@{
+    ViewData["Title"] = "Gestión de Libros y Autores";
+}
 
-</head>
+<link rel="stylesheet" href="~/css/StyleSheet.css" />
 
-<body>
-
-    <h2>Add new Books</h2>
-
-    <form class="add_form">
-
-        <div class="form_body">
-            <div>
-                <h3>Name</h3>
-                <input type="text" class="input_name" placeholder="1984" required/>
-            </div>
-
-            <div>
-                <h3>Author</h3>
-                <input type="text" class="input_author" placeholder="George" />
-            </div>
-
-            <div>
-                <h3>Editorial</h3>
-                <input type="text" class="input_editorial" placeholder="Debolsillo" />
-            </div>
+<div class="main-container">
+    <div class="forms-section">
+        <div class="form-container">
+            <h2>Agregar Autor</h2>
+            <form class="add_form" method="post" asp-action="CreateAuthor">
+                <div class="form_group">
+                    <label asp-for="AuthorForm.AuthorName"></label>
+                    <input asp-for="AuthorForm.AuthorName" placeholder="George Orwell" />
+                    <span asp-validation-for="AuthorForm.AuthorName" class="text-danger"></span>
+                </div>
+                <div class="form_button">
+                    <button type="submit" class="add_button">Agregar Autor</button>
+                </div>
+            </form>
         </div>
-
-        
-
-        <div class="form_button">
-            <button type="submit" class="Add_button">Agregar</button>
+        <div class="form-container">
+            <h2>Agregar Libro</h2>
+            <form class="add_form" method="post" asp-action="CreateBooks">
+                <div class="form_group">
+                    <label asp-for="BookForm.BookName"></label>
+                    <input asp-for="BookForm.BookName" placeholder="1984" />
+                    <span asp-validation-for="BookForm.BookName" class="text-danger"></span>
+                </div>
+                <div class="form_group">
+                    <label asp-for="BookForm.Editorial"></label>
+                    <input asp-for="BookForm.Editorial" placeholder="Debolsillo" />
+                    <span asp-validation-for="BookForm.Editorial" class="text-danger"></span>
+                </div>
+                <div class="form_group">
+                    <label asp-for="BookForm.AuthorId"></label>
+                    <select asp-for="BookForm.AuthorId" asp-items="Model.AuthorOptions">
+                        <option value="">Seleccione un autor</option>
+                    </select>
+                    <span asp-validation-for="BookForm.AuthorId" class="text-danger"></span>
+                </div>
+                <div class="form_button">
+                    <button type="submit" class="add_button">Agregar Libro</button>
+                </div>
+            </form>
         </div>
+    </div>
+    <div class="table-section">
+        <h2>Libros en la Base de Datos</h2>
+        @if (Model.Books.Any())
+        {
+            <table class="books-table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Editorial</th>
+                        <th>Autor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var book in Model.Books)
+                    {
+                        <tr>
+                            <td>@book.BookName</td>
+                            <td>@book.Editorial</td>
+                            <td>@book.Author?.AuthorName</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p>No hay libros registrados.</p>
+        }
+    </div>
+</div>
 
-    </form>
-
-</body>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

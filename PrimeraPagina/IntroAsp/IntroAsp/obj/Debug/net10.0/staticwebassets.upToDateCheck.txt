@@ -1,6 +1,4 @@
-wwwroot\css\Form.cs
 wwwroot\css\site.css
-wwwroot\css\StyleSheet.css
 wwwroot\favicon.ico
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
@@ -63,6 +61,8 @@ wwwroot\lib\jquery\dist\jquery.slim.js
 wwwroot\lib\jquery\dist\jquery.slim.min.js
 wwwroot\lib\jquery\dist\jquery.slim.min.map
 wwwroot\lib\jquery\LICENSE.txt
+wwwroot\css\Form.cs
+wwwroot\css\StyleSheet.css
 C:\Users\oscar\Documents\Programaci-n-web\PrimeraPagina\IntroAsp\IntroAsp\wwwroot\css\site.css
 C:\Users\oscar\Documents\Programaci-n-web\PrimeraPagina\IntroAsp\IntroAsp\wwwroot\favicon.ico
 C:\Users\oscar\Documents\Programaci-n-web\PrimeraPagina\IntroAsp\IntroAsp\wwwroot\js\site.js
