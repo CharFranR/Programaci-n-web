@@ -6,10 +6,10 @@ using System.Text;
 
 namespace Aplication.UseCases.Persons
 {
-    public class GetExistsWithCode
+    public class GetExistsWithCodeUseCase
     {
         public readonly ICodeRepository <PersonEntity> _codeRepository;
-        public GetExistsWithCode(ICodeRepository<PersonEntity> codeRepository)
+        public GetExistsWithCodeUseCase(ICodeRepository<PersonEntity> codeRepository)
         {
             _codeRepository = codeRepository;
         }

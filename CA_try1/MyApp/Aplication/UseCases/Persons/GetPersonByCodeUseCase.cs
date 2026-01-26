@@ -6,11 +6,11 @@ using System.Text;
 
 namespace Aplication.UseCases.Persons
 {
-    public class GetPersonByCode
+    public class GetPersonByCodeUseCase
     {
         public readonly ICodeRepository<PersonEntity> _codeRepository;
 
-        public GetPersonByCode(ICodeRepository<PersonEntity> codeRepository)
+        public GetPersonByCodeUseCase(ICodeRepository<PersonEntity> codeRepository)
         {
             _codeRepository = codeRepository;
         }
@@ -21,9 +21,10 @@ namespace Aplication.UseCases.Persons
 
             if (person == null)
             {
-                throw new InvalidOperationException($"No se encontró a ninguna persona con código: {code}")
+                throw new InvalidOperationException($"No se encontró a ninguna persona con código: {code}");
             }
 
             return person;
         }
+    }
 }
