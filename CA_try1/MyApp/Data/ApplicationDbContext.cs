@@ -56,7 +56,10 @@ namespace Data
 
             foreach (var entry in entries)
             {
-                entry.Property("UpdatedAt").CurrentValue = DateTime.UtcNow;
+                if (entry.Metadata.FindProperty("UpdatedAt") != null)
+                {
+                    entry.Property("UpdatedAt").CurrentValue = DateTime.UtcNow;
+                } 
             }
         }
     }
