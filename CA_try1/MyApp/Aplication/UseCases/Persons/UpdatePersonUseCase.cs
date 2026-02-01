@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Aplication.UseCases.Persons
 {
-    internal class UpdatePersonUseCase
+    public class UpdatePersonUseCase
     {
         private readonly IRepository<PersonEntity, Guid> _repository;
 

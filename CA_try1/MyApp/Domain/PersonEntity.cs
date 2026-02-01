@@ -14,6 +14,12 @@ namespace Domain
 
         public string FullName => $"{FirstName} {LastName}";
 
+
+        protected PersonEntity()
+        {
+        }
+
+
         public PersonEntity(string code, string firstname, string lastname, string email, string phonenumber)
         {
             ValidateCode(code);

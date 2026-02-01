@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Data.Repositories
 {
-    internal class PersonRepository : IRepository<PersonEntity, Guid>, ICodeRepository<PersonEntity>
+    public class PersonRepository : IRepository<PersonEntity, Guid>, ICodeRepository<PersonEntity>
     {
         private readonly ApplicationDbContext _context;
 

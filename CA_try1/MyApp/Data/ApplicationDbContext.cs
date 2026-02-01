@@ -32,13 +32,13 @@ namespace Data
 
                 entity.Property(e => e.FirstName).IsRequired().HasMaxLength(100);
 
-                entity.Property(e => e.Email).IsRequired().HasMaxLength(15);
+                entity.Property(e => e.Email).IsRequired().HasMaxLength(100);
 
                 entity.Ignore(e => e.FullName);
 
-                entity.Property<DateTime>("CratedAt").IsRequired().HasDefaultValueSql("GETUTCUPDATE()");
+                entity.Property<DateTime>("CreatedAt").IsRequired().HasDefaultValueSql("GETUTCDATE()");
 
-                entity.Property<DateTime>("UpdatedAt").IsRequired().HasDefaultValueSql("GETUTCUPDATE()");
+                entity.Property<DateTime>("UpdatedAt").IsRequired().HasDefaultValueSql("GETUTCDATE()");
 
 
             });
