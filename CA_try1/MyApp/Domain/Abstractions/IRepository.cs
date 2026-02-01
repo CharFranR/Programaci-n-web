@@ -11,6 +11,6 @@ namespace Domain.Abstractions
         Task AddAsync(TEntity entity);
         Task UpdateAsync(TEntity entity);
         Task DeleteAsync(TEntity entity);
-        Task<int> SaveChanges();
+        Task<int> SaveChangesAsync();
     }
 }

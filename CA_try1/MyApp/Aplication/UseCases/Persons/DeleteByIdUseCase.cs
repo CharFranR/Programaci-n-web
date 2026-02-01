@@ -24,7 +24,7 @@ namespace Aplication.UseCases.Persons
             }
 
             await _repository.DeleteAsync(person);
-            await _repository.SaveChanges();
+            await _repository.SaveChangesAsync();
 
         }
     }
